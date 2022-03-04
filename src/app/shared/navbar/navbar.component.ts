@@ -47,6 +47,22 @@ export class NavbarComponent implements OnInit {
             this.sidebarClose();
         }
     };
+
+    isSignUp(){
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        if(titlee.charAt(0) === '#'){
+            titlee = titlee.slice( 1 );
+        }
+          if( titlee === '/signup' ) {
+              return true;
+          }
+          else {
+              return false;
+          }
+      }
+    
+
+
     isHome() {
       var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){
